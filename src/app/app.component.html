@@ -1,0 +1,73 @@
+	<!--button style="width:100px; height:100px;">
+		HI FOLKS
+		[hidden]="isLogged() == false"
+	</button-->
+	<div style="display: flex">
+		<div *ngIf="isLogged()" class="main-layout" >
+			<div class="top-logo">
+				<img src="assets/img/Logo_LKM.png" class="main-logo">
+			</div>
+			<div class="down-logo">
+			</div>
+			<div routerLink='/upload' class="div-link">
+				<div class="div-icon">
+					<i class="fas fa-upload menu-item"></i>
+				</div>
+				<div class="div-iten-name">Upload</div>
+			</div>
+			<div routerLink='/sourceconfig-list' class="div-link">
+				<div class="div-icon">
+					<i class="fas fa-cogs menu-item"></i>
+				</div>
+				<div class="div-iten-name">Datasource</div>
+			</div>
+			<div routerLink='/matcher-list' class="div-link">
+				<div class="div-icon">
+					<i class="fas fa-link menu-item"></i>
+				</div>
+				<div class="div-iten-name">Mapeamento</div>
+			</div>
+			<div routerLink='/schedule-list'  class="div-link">
+				<div class="div-icon">
+					<i class="fas fa-calendar menu-item"></i>
+				</div>
+				<div class="div-iten-name">Schedule</div>
+			</div>
+			<div routerLink='/monitoring' class="div-link">
+				<div class="div-icon">
+					<i class="fas fa-desktop menu-item"></i>
+				</div>
+				<div class="div-iten-name">Monitoramento</div>
+			</div>
+			<div routerLink='/alert' class="div-link">
+				<div class="div-icon">
+					<i class="fas fa-bell menu-item"></i>
+				</div>
+				<div class="div-iten-name">Notificação</div>
+			</div>
+			<!--div routerLink='/revenue' class="div-link">
+				<div class="div-icon">
+					<i class="fas fa-bell menu-item"></i>
+				</div>
+				<div class="div-iten-name">Receita</div>
+			</div-->
+		</div>
+		<div style="width: 90%">
+			<!-- Header -->
+			<div>
+				<div *ngIf="isLogged() == false" class="local-card head">
+					 Mapeador TaxONE
+				</div>
+				<div style="height:8px;">
+				</div>
+				<div>
+					<!-- Content -->
+					<router-outlet></router-outlet>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div *ngIf="loading$ | async" class="loading-div">
+		Hi FOLKS
+	</div>

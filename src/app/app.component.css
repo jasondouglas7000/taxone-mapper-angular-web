@@ -1,0 +1,40 @@
+agm-map {
+  height: 300px;
+}
+
+.main-logo {
+    margin-left: -5px; 
+    width: 126px;
+}    
+
+.menu-item {
+    color:white; 
+    margin-right: 5px;
+}
+    
+.loading-div {
+    position: absolute; 
+    left:0px; 
+    top:0px; 
+    width: 100%; 
+    height:100%; 
+    background-color: blue; 
+    opacity: 0.2;    
+}
+    
+    
+.top-logo{
+    margin-top: 30px;
+}    
+
+.down-logo{
+    margin-top: 10px;
+}
+
+.div-icon{
+    width:18%;
+}
+
+.div-iten-name{
+    color: white;
+}
