@@ -13,6 +13,7 @@ import { AlertService } from './shared/alert.service';
 @Component({
     selector: 'alert',
     templateUrl: 'alert.component.html',
+    styleUrls:['alert.component.css'],
 	imports: [CommonModule, FormsModule, PaginationComponent],
 	providers: [AlertService]
 })

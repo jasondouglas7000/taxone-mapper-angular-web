@@ -1,0 +1,23 @@
+.alert-inner-content {
+    margin: 5px 0 10px 0; 
+    width:44%;
+}
+
+.td-button{
+    width: 10px; 
+    padding: 1px;
+}
+
+.add-button{
+    padding: 1px 6px 1px 6px;
+}
+
+.delete-button{
+    padding: 1px 6px 1px 6px;;
+}
+
+.div-save-button{
+    width: 45%; 
+    direction: rtl; 
+    margin: 20px 0px 15px 0px;
+}

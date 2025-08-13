@@ -1,0 +1,43 @@
+.filter {
+    width:60%; 
+    margin-left: 7px;
+}
+
+.filter-name {
+    display: flex; 
+    margin: 5px 0 0 10px
+}
+
+.filter-name div{
+    font-size: 12px; 
+    margin-right: 13px;
+}
+
+.filter-associado {
+    display: flex; 
+    margin: 5px 0 0 63px;
+}
+
+.filter-associado div{
+    font-size: 12px; 
+    margin-right: 13px;
+}
+
+.div-botao-filter {
+    direction: rtl; 
+    margin-right: 28px;
+}
+
+.div-line-divider {
+    margin-top:22px; 
+    width:60%
+}
+
+.matcher-inner-content {
+    margin: 5px 0 10px 0; 
+    width:58%
+}
+
+.edit-button {
+    padding: 1px 6px 1px 6px;
+}

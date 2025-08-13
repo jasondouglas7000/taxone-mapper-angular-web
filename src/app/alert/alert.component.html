@@ -3,14 +3,14 @@
 		<!--h1>HI FOLKS</h1-->
 		<div class="tltle">Notificações de Status de Processos</div>
 		<div class="bordered">
-			<div style="margin:17px 0 0 28px;">
+			<div class="list-content">
 				<div class="table-title">Emails</div>
-				<div style="margin: 5px 0 10px 0; width:44%">
-					<table cellspacing="0" style="width: 100%">
+				<div class="alert-inner-content">
+					<table cellspacing="0" class="width-100">
 						<thead>
-							<td class="table-header" style="width: 61%">Email</td>
-							<td class="table-header" style="width: 20%">Tipo Notificação</td>
-							<td class="table-header" style="width: 10%"></td>
+							<td class="table-header width-60">Email</td>
+							<td class="table-header width-20">Tipo Notificação</td>
+							<td class="table-header width-10"></td>
 						</thead>
 						<tbody>
 							<tr class="t-row">
@@ -22,27 +22,27 @@
 										<option *ngFor="let nf of notificationTypes" value="{{nf}}">{{nf}}</option>
 									</select>
 								</td>
-								<td class="t-columns" style="width: 10px; padding: 1px">
-									<button (click)="onAdd()" style="padding: 1px 6px 1px 6px;">Add</button>
+								<td class="t-columns td-button" >
+									<button (click)="onAdd()" class="alert-button">Add</button>
 								</td>
 							</tr>
 							<tr *ngFor="let e of emails" class="t-row">
 								<td class="t-columns">{{e.email}}</td>
 								<td class="t-columns">{{e.type}}</td>
-								<td class="t-columns" style="width: 10px; padding: 1px">
+								<td class="t-columns" class="td-button">
 									<button (click)="onDelete(e.id)" [disabled]="e.id == null" 
-										style="padding: 1px 6px 1px 6px;">Delete</button>
+										class="alert-button">Delete</button>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<div style="display:flex; margin-left: 10px; margin-top:5px;">
-						<div style="width:90%"></div>
+					<div class="pagination-div">
+						<div></div>
 						<pagination [pagination]="pagination" [totalPages]="totalPages" (page)="onPage($event)"></pagination>
 					</div>
 				</div>
 			</div>
-			<div style="width: 45%; direction: rtl; margin: 20px 0px 15px 0px">
+			<div class="div-save-button">
 				<button (click)="onSave()">Save</button> 
 			</div>
 		</div>

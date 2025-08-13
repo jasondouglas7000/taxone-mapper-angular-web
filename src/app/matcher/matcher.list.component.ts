@@ -12,6 +12,7 @@ import { environment } from './../../environments/environment';
 @Component({
     selector: "matcher-list",
     templateUrl: "matcher.list.component.html",
+    styleUrls: ["matcher.list.component.css"],
 	imports: [CommonModule, FormsModule, PaginationComponent],
 	providers: [MatcherService] 
 })
