@@ -1,0 +1,99 @@
+.field-nome{
+    display: flex; 
+    margin: 30px 0 0 28px;
+}
+
+
+.field-nome-label {
+    font-size: 12px; 
+    margin-right: 13px;
+}
+
+.schedule-list-container{
+	font-size: 14px;  
+	margin-right: 13px; 
+	padding-top: 8px;
+}
+
+
+.right-side {
+    display: flex; 
+    width: 50%
+}
+
+
+.left-side {
+    display: flex; 
+    width: 37%
+}
+
+.disponivel-container {
+    margin: 32px 0 0 28px; 
+    display: flex; 
+    width: 35%
+}
+
+.disponivel-select {
+    width: 100px; 
+    height: 144px !important; 
+    padding: 5px;
+}
+
+.transfer-container {
+    padding: 54px 20px 0 20px
+}
+
+.selecionadas-container {
+    margin-top: 32px; 
+    display: flex; 
+    width: 35%
+}
+
+.selecionadas-select {
+    width: 100px; 
+    height: 144px !important; 
+    padding: 5px;
+}
+
+.dias-container {
+    margin: 32px 0 0 100px; 
+    display: flex; 
+    width: 35%
+}
+
+.dias-select{
+    width: 100px; 
+    height: 144px !important; 
+    padding: 5px;
+}
+
+.horas-container {
+    margin: 32px 0 0 28px; 
+    display: flex; 
+    width: 35%
+}
+
+.horas-select {
+    width: 100px; 
+    height: 144px !important; 
+    padding: 5px;
+}
+
+.main-criteria-content {
+    margin:17px 0 0 28px;
+}
+
+.criterio-list-content {
+    margin: 5px 0 10px 0; 
+    width:74%
+}
+
+.add-delete-button {
+    padding: 1px 6px 1px 6px;
+}
+
+.button-container{
+    width: 87%; 
+    direction: rtl; 
+    margin: 5px 0 12px 0;
+}

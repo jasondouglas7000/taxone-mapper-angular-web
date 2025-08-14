@@ -11,6 +11,7 @@ import { LoginService } from './shared/login.service';
 @Component({
     selector: 'login',
     templateUrl: 'login.component.html',
+    styleUrls: ['login.component.css'],
 	imports: [CommonModule, FormsModule], 
 	providers: [LoginService]
 })

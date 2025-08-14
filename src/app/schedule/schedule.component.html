@@ -3,19 +3,19 @@
 		<!--h1>HI FOLKS</h1-->
 		<div class="tltle">Agendamento</div>
 		<div class="bordered">
-			<div style="display: flex; margin: 30px 0 0 28px;">
-				<div style="font-size: 12px; margin-right: 13px;">Nome</div>
+			<div class="field-nome">
+				<div class="field-nome-label">Nome</div>
 				<input [(ngModel)]="scheduleConfig.name" type="text" maxlength="40" size="40" #name="ngModel"> <!-- required -->
 			</div>
 			<div style="display:flex">
-				<div style="display: flex; width: 50%">
-					<div style="margin: 32px 0 0 28px; display: flex; width: 35%">
-						<div class="schedule-list-container" >Disponiveis</div>
-						<select multiple [(ngModel)]="selectedAvaiableTables" style="width: 100px; height: 144px !important; padding: 5px;" draggable="true">
+				<div class="right-side">
+					<div class="disponivel-container">
+						<div class="schedule-list-container">Disponiveis</div>
+						<select multiple [(ngModel)]="selectedAvaiableTables" class="disponivel-select" draggable="true">
 							<option *ngFor="let at of availableTables" value="{{at.id}}">{{at.name}}</option>
 						</select>
 					</div>
-					<div style="padding: 54px 20px 0 20px">
+					<div class="transfer-container">
 						<div>
 							<button (click)="onAddSelected()">></button>
 						</div>
@@ -23,31 +23,31 @@
 							<button (click)="onAddAvailable()"><</button>
 						</div>
 					</div>
-					<div style="margin-top: 32px; display: flex; width: 35%">
+					<div class="selecionadas-container">
 						<div class="schedule-list-container">Selecionadas</div>
-						<select multiple [(ngModel)]="selectedSelectedTables" style="width: 100px; height: 144px !important; padding: 5px;">
+						<select multiple [(ngModel)]="selectedSelectedTables" class="selecionadas-select">
 							<option *ngFor="let st of scheduleConfig.safxTables" value="{{st.id}}">{{st.name}}</option>
 						</select>
 					</div>
 				</div>
-				<div style="display: flex; width: 37%">
-					<div style="margin: 32px 0 0 100px; display: flex; width: 35%">
+				<div class="left-side">
+					<div class="dias-container">
 						<div class="schedule-list-container">Dias</div>
-						<select [(ngModel)]="selectedDays" multiple style="width: 100px; height: 144px !important; padding: 5px;">
+						<select [(ngModel)]="selectedDays" multiple class="dias-select">
 							<option *ngFor="let v of days" value="{{v.value}}">{{v.label}}</option>
 						</select>
 					</div>
-					<div style="margin: 32px 0 0 28px; display: flex; width: 35%">
+					<div class="horas-container">
 						<div class="schedule-list-container">Horas</div>
-						<select multiple [(ngModel)]="selectedHours" style="width: 100px; height: 144px !important; padding: 5px;">
+						<select multiple [(ngModel)]="selectedHours" class="horas-select">
 							<option *ngFor="let h of hours" [value]="h.value">{{h.label}}</option>
 						</select>
 					</div>
 				</div>
 			</div>
-			<div style="margin:17px 0 0 28px;">
+			<div class="main-criteria-content">
 				<div class="table-title">Critérios</div>
-				<div style="margin: 5px 0 10px 0; width:74%">
+				<div class="criterio-list-content">
 					<table cellspacing="0" style="width: 100%">
 						<thead>
 							<td class="table-header" style="width: 12%">Tabela</td>
@@ -95,7 +95,7 @@
 									</div>
 								</td>
 								<td class="t-columns" style="width: 10px; padding: 1px">
-									<button (click)="onAdd()" style="padding: 1px 6px 1px 6px;">Add</button>
+									<button (click)="onAdd()" class="add-delete-button">Add</button>
 								</td>
 							</tr>
 							<tr *ngFor="let c of criteriasOnePage" class="t-row">
@@ -104,18 +104,18 @@
 								<td class="t-columns">{{c.operator}}</td>
 								<td class="t-columns">{{c.additionalValue ? c.value + ' até ' + c.additionalValue : c.value}}</td>
 								<td class="t-columns" style="width: 10px; padding: 1px">
-									<button (click)="onDelete(c)" style="padding: 1px 6px 1px 6px;">Delete</button>
+									<button (click)="onDelete(c)" class="add-delete-button">Delete</button>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<div style="display:flex; margin-left: 10px; margin-top:5px;">
-						<div style="width:90%"></div>
+					<div class="pagination-div">
+						<div></div>
 						<pagination [pagination]="pagination" [totalPages]="totalPages" (page)="onPage($event)"></pagination>
 					</div>
 				</div>
 			</div>
-			<div style="width: 87%; direction: rtl; margin: 5px 0 12px 0;">
+			<div class="button-container">
 				<button (click)="onSave()">Salvar</button> 
 				<button (click)="onBack()" style="margin-right:5px">Cancelar</button>
 				<button (click)="onProcess()" style="margin-right:5px">Process</button>

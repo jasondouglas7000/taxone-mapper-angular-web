@@ -1,0 +1,54 @@
+.main-conteiner {
+    display: flex; 
+    margin-top: 15px;
+}
+
+.detalhes-label {
+    font-size: 14px; 
+    font-weight: 600; 
+    margin-left:13px
+}
+
+.mapping-field{
+	font-size: 12px;  
+	width: 11%
+}
+
+.mapping-field-container{
+	margin: 9px 0 0 11px; 
+	display: flex;
+}
+
+.mapping-panel{
+	margin: 7px 9px 0 13px; 
+	border-radius: 8px;
+	border: 1px solid rgb(184 205 241); 
+}
+
+.metadata-button {
+    margin: 10px 10px 0 13px; 
+    display: flex; 
+    direction: rtl
+}
+
+
+.campos-title {
+    padding: 0px 8px 6px 0px;
+}
+
+.campos-select{
+    height: 24px !important; 
+    padding: 0px; 
+    margin-top: -3px;
+}
+
+.campos-list-content {
+    margin: 5px 0 10px 0;
+}
+    
+    
+.button-container {
+    width: 60%; 
+    direction: rtl; 
+    margin-top: 10px
+}    

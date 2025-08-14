@@ -6,26 +6,26 @@
 			<div style="width:60%; margin-left: 7px;">
 				<div class="filter-label">Detalhes</div>
 				<div style="display:flex">	
-					<div style="display: flex; margin: 5px 0 0 10px">
-						<div style="font-size: 12px; margin-right: 13px;">Nome</div>
+					<div class="filter-name">
+						<div>Nome</div>
 						<div style="font-size: 13px">{{scheduleLog.scheduleName}}</div>
 					</div>
-					<div style="display: flex; margin: 5px 0 0 63px">
-						<div style="font-size: 12px; margin-right: 13px;">Horário</div>
+					<div class="field-horario">
+						<div>Horário</div>
 						<div style="font-size: 13px">{{scheduleLog.executionDate | date:'yyyy/MM/dd HH:mm:ss'}}</div>
 					</div>
-					<div style="display: flex; margin: 5px 0 0 63px">
-						<div style="font-size: 12px; margin-right: 13px;">Status</div>
+					<div class="field-status">
+						<div >Status</div>
 						<div style="font-size: 13px">{{scheduleLog.status}}</div>
 					</div>
 				</div>
 			</div>
-			<div style="margin-top:22px; width:60%">
+			<div class="div-line-divider">
 				<div class="line-divider"></div>
 			</div>
-			<div style="margin:17px 0 0 13px;">
+			<div class="list-main-content">
 				<div class="table-title">Erros TaxONE</div>
-				<div style="margin: 5px 0 10px 0; width:58%">
+				<div class="detail-list-content" style="width:58%">
 					<table cellspacing="0" style="width: 100%">
 						<thead>
 							<td class="table-header" style="width: 14%">N# Registro</td>
@@ -44,13 +44,13 @@
 							</tr>
 						</tbody>
 					</table>
-					<div style="display:flex; margin-left: 10px; margin-top:5px;">
-						<div style="width:90%"></div>
+					<div class="pagination-div">
+						<div></div>
 						<pagination [pagination]="pagination" [totalPages]="totalPages" (page)="onPage($event)"></pagination>
 					</div>
 				</div>
 			</div>
-			<div style="width: 60%; direction: rtl; margin-top: 10px">
+			<div class="button-conteiner">
 				<button (click)="onBack()" style="margin-right: 5px">Voltar</button> 
 			</div>
 		</div>

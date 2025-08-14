@@ -12,6 +12,7 @@ import { PaginationComponent } from '../components/pagination.component';
 @Component({
     selector: 'monitoring-detail',
     templateUrl: 'monitoring.detail.component.html',
+    styleUrls: ['monitoring.detail.component.css'],
 	imports: [CommonModule, FormsModule, PaginationComponent]
 })
 

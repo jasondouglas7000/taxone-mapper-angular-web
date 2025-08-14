@@ -8,7 +8,7 @@
     margin: 5px 0 0 10px
 }
 
-.filter-name div{
+.filter-name > div{
     font-size: 12px; 
     margin-right: 13px;
 }
@@ -18,7 +18,7 @@
     margin: 5px 0 0 63px;
 }
 
-.filter-associado div{
+.filter-associado > div{
     font-size: 12px; 
     margin-right: 13px;
 }
@@ -33,7 +33,7 @@
     width:60%
 }
 
-.matcher-inner-content {
+.inner-content {
     margin: 5px 0 10px 0; 
     width:58%
 }

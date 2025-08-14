@@ -10,6 +10,7 @@ import { MatcherService } from './shared/matcher.service';
 @Component({
     selector: 'matcher',
     templateUrl: 'matcher.component.html',
+    styleUrls: ['matcher.component.css'],
 	imports: [CommonModule, FormsModule, PaginationComponent],
 	providers: [MatcherService] 
 })

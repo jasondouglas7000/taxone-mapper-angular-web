@@ -1,0 +1,47 @@
+.main-content {
+    width: 33%; 
+    margin: 10% 0 0 38%; 
+    min-height: 255px
+}
+
+.main-content > div{
+    width: 98%
+}
+
+.login-content {
+    min-height: 202px; 
+    margin-left: 8px;
+}
+
+.login-inner-content {
+    margin: 25px 0 0 13px; 
+    display: flex
+}
+
+.field-nome{
+    display: flex; 
+    margin: 14px 0 16px 42px;
+}
+
+.field-nome-label{
+    font-size: 12px; 
+    margin: 3px 13px 0 0; 
+    text-align: right; 
+    width: 50px;
+}
+
+.field-password{
+    display: flex; 
+    margin: 0px 0 16px 42px;
+}
+
+.field-password-label{
+    font-size: 12px; 
+    margin: 3px 13px 0 0; 
+    text-align: right; 
+    width: 50px;
+}
+
+.ok-button {
+    margin: 27px 30px 0px 30px;
+}

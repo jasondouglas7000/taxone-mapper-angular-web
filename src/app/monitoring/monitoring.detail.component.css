@@ -1,0 +1,48 @@
+.filter-name{
+    display: flex; 
+    margin: 5px 0 0 10px
+}
+
+.filter-name > div{
+    font-size: 12px; 
+    margin-right: 13px;
+}
+
+.field-horario{
+    display: flex; 
+    margin: 5px 0 0 63px
+}
+
+.field-horario > div{
+    font-size: 12px; 
+    margin-right: 13px;
+}
+
+.field-status {
+    display: flex; 
+    margin: 5px 0 0 63px
+}
+
+.field-status > div {
+    font-size: 12px; 
+    margin-right: 13px;
+}
+
+.div-line-divider {
+    margin-top:22px; 
+    width:60%
+}
+
+.list-main-content {
+    margin:17px 0 0 13px;
+}
+
+.detail-list-content {
+    margin: 5px 0 10px 0; 
+}
+
+.button-conteiner {
+    width: 60%; 
+    direction: rtl; 
+    margin-top: 10px
+}

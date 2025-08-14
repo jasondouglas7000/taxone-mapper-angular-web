@@ -13,6 +13,7 @@ import { MonitoringService } from './shared/monitoring.service';
 @Component({
     selector: 'monitoring',
     templateUrl: 'monitoring.component.html',
+    styleUrls: ['monitoring.component.css'],
     imports: [CommonModule, FormsModule, PaginationComponent],
 	providers: [MonitoringService]	
 })

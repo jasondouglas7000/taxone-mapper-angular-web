@@ -16,6 +16,7 @@ import { ScheduleService } from './shared/schedule.service';
 @Component({
     selector: 'schedule-list',
     templateUrl: 'schedule.list.component.html',
+    styleUrls: ['schedule.list.component.css'],
 	imports: [CommonModule, FormsModule, PaginationComponent],
 	providers: [ScheduleService]
 })

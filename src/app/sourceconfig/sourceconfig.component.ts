@@ -13,6 +13,7 @@ import { SourceConfigService } from './shared/sourceconfig.service';
 @Component({
     selector: 'sourceconfig',
     templateUrl: 'sourceconfig.component.html',
+    styleUrls: ['sourceconfig.component.css'],
 	imports: [CommonModule, FormsModule, PaginationComponent],
 	providers: [SourceConfigService]
 })

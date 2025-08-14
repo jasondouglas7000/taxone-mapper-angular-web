@@ -1,0 +1,51 @@
+.main-content {
+    display: flex; margin:20px 0 0 13px;
+}
+
+.safxtable-name {
+    font-size: 13px; 
+    padding: 17px 8px 13px 0px; 
+    font-weight: 600;
+}
+
+.dscolumn-target{
+    display: flex; 
+    border: 1px solid; 
+    height: 16px; 
+    padding: 0px 0 0 4px;
+}
+
+
+.dscolumn-button {
+    width: 15%; 
+    text-align: center; 
+    margin-top: -2px; 
+    cursor: pointer;
+}
+
+.dstable-main-content {
+    width: 45%; 
+    margin-left: 100px;
+}
+
+.dstable-header {
+    display: flex; 
+    font-size: 13px; 
+    padding: 18px 8px 13px 0px; 
+    font-weight: 600
+}
+
+.dstable-header-title {
+    margin-right: 7px;
+}
+
+.dstable-select {
+    height: 24px !important; 
+    padding: 0px; 
+    margin-top: -3px;
+}
+
+.div-buttons {
+    direction: rtl; 
+    margin: 42px 13px 0 0;
+}

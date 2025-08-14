@@ -16,6 +16,7 @@ import { SourceConfig } from '../components/common/model';
 @Component({
     selector: 'sourceconfig-list',
     templateUrl: 'sourceconfig.list.component.html',
+    styleUrls: ['sourceconfig.list.component.css'],
 	imports: [CommonModule, FormsModule],
 	providers: [SourceConfigService]	
 })

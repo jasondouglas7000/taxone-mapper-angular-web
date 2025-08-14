@@ -1,0 +1,25 @@
+.main-content {
+    display: flex; 
+    margin:20px 0 0 13px;
+}
+
+.agendamento-title {
+    padding: 0px 8px 6px 0px;
+}
+
+.add-button {
+    margin-left: 65%; 
+    padding: 1px 6px 1px 6px;
+}
+
+.schedule-list-content{
+    margin: 5px 0 10px 0;
+}
+
+.table-header-nome {
+    padding: 0px 0 0 5px;
+}
+
+.schedule-button {
+    padding: 1px 6px 1px 6px;
+}

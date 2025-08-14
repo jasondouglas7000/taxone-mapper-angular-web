@@ -2,20 +2,20 @@
 	<div>
 		<div class="tltle">Agendamentos</div>
 		<div class="bordered">
-			<div style="display: flex; margin:20px 0 0 13px;">
-				<div style="width: 45%;">
+			<div class="main-content">
+				<div class="width-45">
 					<div style="display:flex">
-						<div class="table-title" style="padding: 0px 8px 6px 0px;">Agendamentos</div>
-						<button (click)="onAdd()" style="margin-left: 65%; padding: 1px 6px 1px 6px;">Adicionar</button>
+						<div class="table-title agendamento-title">Agendamentos</div>
+						<button (click)="onAdd()" class="add-button">Adicionar</button>
 					</div>
-					<div style="margin: 5px 0 10px 0; width:100%">
-						<table cellspacing="0" style="width: 100%">
+					<div class="schedule-list-content width-100">
+						<table cellspacing="0" class="width-100">
 							<thead>
-								<td class="table-header" style="padding: 0px 0 0 5px;">Nome</td>
+								<td class="table-header table-header-nome">Nome</td>
 								<td class="table-header">Usuário</td>
 								<td class="table-header">Status</td>
-								<td class="table-header" style="width: 10%;"></td>
-								<td class="table-header" style="width: 10%;"></td>
+								<td class="table-header width-10"></td>
+								<td class="table-header width-10"></td>
 							</thead>
 							<tbody>
 								@for (s of schedules; track s.id) {
@@ -28,18 +28,18 @@
 										<td class="t-columns">Inativo</td>
 									}
 									<td class="t-columns">
-										<button (click)="onEdit(s.id)" style="padding: 1px 6px 1px 6px;">Editar</button>
+										<button (click)="onEdit(s.id)" class="schedule-button">Editar</button>
 									</td>
 									<td class="t-columns" style="width: 10px;">
-										<button (click)="onDelete(s.id)" style="padding: 1px 6px 1px 6px;">Excluir</button>
+										<button (click)="onDelete(s.id)" class="schedule-button">Excluir</button>
 									</td>
 									<td class="t-columns"></td>
 								</tr>
 								}
 							</tbody>
 						</table>
-						<div style="display:flex; margin-left: 10px; margin-top:5px;">
-							<div style="width:90%"></div>
+						<div class="pagination-div">
+							<div></div>
 							<pagination [pagination]="pagination" [totalPages]="totalPages" (page)="onPage($event)">
 							</pagination>
 						</div>
