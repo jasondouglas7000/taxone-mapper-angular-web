@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from './../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
-import { HttpClientWrapper } from '../components/httpclientwrapper';
+
 import { Paginator } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 
@@ -23,7 +24,7 @@ export class MonitoringDetailComponent{
 	public totalPages : number = 0;
 	public pagination : Paginator = new Paginator();
 	
-	constructor(private http: HttpClientWrapper, private router: Router, private route: ActivatedRoute){
+	constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute){
 		let id = parseInt(this.route.snapshot.paramMap.get("id")!);
 		this.loadScheduleLog(id);
 		this.loadTaxOneErrors(id);

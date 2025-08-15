@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from './../../environments/environment';
 
-import { HttpClientWrapper } from '../components/httpclientwrapper';
+import { HttpClient } from '@angular/common/http';
 import { Paginator } from '../components/common/model';
 
 @Component({
@@ -20,7 +20,7 @@ export class RevenueComponent {
 	public resourceSources : Array<ResourceSource> = [];
 	public quotas : Array<any>  = [];
 
-	constructor(private http: HttpClientWrapper, private route: ActivatedRoute, private router: Router){
+	constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router){
 		this.treatImagePath(document.URL);
 	}
 	

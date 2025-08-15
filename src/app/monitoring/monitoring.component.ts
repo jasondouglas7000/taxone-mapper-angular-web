@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment';
 
-import { HttpClientWrapper } from '../components/httpclientwrapper';
 import { Paginator } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 import { MonitoringService } from './shared/monitoring.service';

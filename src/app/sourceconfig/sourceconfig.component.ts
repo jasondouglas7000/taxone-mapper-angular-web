@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from './../../environments/environment';
 
-import { HttpClientWrapper } from '../components/httpclientwrapper';
 import { Paginator, SourceConfig, DSColumn, DSColumnPage, DSTable } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 import { SourceConfigService } from './shared/sourceconfig.service';

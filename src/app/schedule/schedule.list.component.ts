@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment';
 
-import { HttpClientWrapper } from '../components/httpclientwrapper';
 import { Paginator, Schedule, SchedulePage } from '../components/common/model';
 
 import { LoadingService } from '../components/loading.service';

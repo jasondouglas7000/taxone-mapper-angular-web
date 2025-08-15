@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClientWrapper } from '../../components/httpclientwrapper';
+import { HttpClient } from '@angular/common/http';
 import { Paginator, UploadPage } from '../../components/common/model';
 
 
@@ -11,7 +11,7 @@ import { environment } from './../../../environments/environment';
 export class UploadService{
 	private baseApi = environment.baseApi;
 	
-	constructor(private http: HttpClientWrapper){}
+	constructor(private http: HttpClient){}
 
 	uploads(pagination: Paginator){
 		return this.http.get<UploadPage>(this.baseApi + `uploads?page=${pagination.page}&size=${pagination.size}`);

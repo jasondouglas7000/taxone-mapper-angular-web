@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClientWrapper } from '../../components/httpclientwrapper';
+import { HttpClient } from '@angular/common/http';
 import { Paginator } from '../../components/common/model';
 
 
@@ -11,7 +11,7 @@ import { environment } from './../../../environments/environment';
 export class MonitoringService{
 	private baseApi = environment.baseApi;
 	
-	constructor(private http: HttpClientWrapper){}
+	constructor(private http: HttpClient){}
 
 	scheduleLogsStatisticts(){
 		//return this.http.get(this.baseApi + 'schedulelogsx/statistics');
@@ -19,7 +19,7 @@ export class MonitoringService{
 	}
 	
 	scheduleLogs(status: string, pagination: Paginator){
-		return this.http.get(this.baseApi + `schedulelogs/list?status=${status}&page=${pagination.page}&size=1`)
+		return this.http.get(this.baseApi + `schedulelogs/list?status=${status}&page=${pagination.page}&size=${pagination.size}`)
 	}
 
 }

@@ -14,27 +14,30 @@ import { RevenueComponent } from './revenue/revenue.component';
 import { AlertComponent } from './alert/alert.component';
 import { NotFoundComponent } from './notfound/notfound.component';
 
-export const OURGuardFunction: CanActivateFn = (
+export const AuthGuardFunction: CanActivateFn = (
   next: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
-  console.log("In OURGuardFunction");
-  return true;
+    if (sessionStorage.getItem("token") != null){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 export const routes: Routes = [
 	{path : "", component: AlertComponent},
-	{path : "upload", component: UploadComponent},
-	{path : "sourceconfig-list", component: SourceConfigListComponent}, 
-	{path : "sourceconfig/:sourceType/:operation", component: SourceConfigComponent}, 
-	{path : "matcher-list", component: MatcherListComponent}, 
-	{path : "matcher/:tableName", component: MatcherComponent},
-	{path : "schedule-list", component: ScheduleListComponent},
-	{path : "schedule", component: ScheduleComponent},
-	{path : "monitoring", component: MonitoringComponent},
-	{path : "monitoring-datail/:id", component: MonitoringDetailComponent},
-	{path : "revenue", component: RevenueComponent},
-	{path : "alert", component: AlertComponent},
+	{path : "upload", component: UploadComponent, canActivate: [AuthGuardFunction]},
+	{path : "sourceconfig-list", component: SourceConfigListComponent, canActivate: [AuthGuardFunction]}, 
+	{path : "sourceconfig/:sourceType/:operation", component: SourceConfigComponent, canActivate: [AuthGuardFunction]}, 
+	{path : "matcher-list", component: MatcherListComponent, canActivate: [AuthGuardFunction]}, 
+	{path : "matcher/:tableName", component: MatcherComponent, canActivate: [AuthGuardFunction]},
+	{path : "schedule-list", component: ScheduleListComponent, canActivate: [AuthGuardFunction]},
+	{path : "schedule", component: ScheduleComponent, canActivate: [AuthGuardFunction]},
+	{path : "monitoring", component: MonitoringComponent, canActivate: [AuthGuardFunction]},
+	{path : "monitoring-datail/:id", component: MonitoringDetailComponent, canActivate: [AuthGuardFunction]},
+	{path : "revenue", component: RevenueComponent, canActivate: [AuthGuardFunction]},
+	{path : "alert", component: AlertComponent, canActivate: [AuthGuardFunction]},
 	{path : "login", component: LoginComponent},
 	{path : "**", component: NotFoundComponent}
 ];

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClientWrapper } from '../../components/httpclientwrapper';
+import { HttpClient } from '@angular/common/http';
 import { Paginator, SAFXTable, SAFXTablePage, SAFXColumn, DSTable, DSColumn, DSColumnPage } from '../../components/common/model';
 
 
@@ -11,7 +11,7 @@ import { environment } from './../../../environments/environment';
 export class MatcherService{
 	private baseApi = environment.baseApi;
 	
-	constructor(private http: HttpClientWrapper){}
+	constructor(private http: HttpClient){}
 	
 	safxTables(filter: string, pagination: Paginator){
 		return this.http.get<SAFXTablePage>(this.baseApi + `safxTables?page=${pagination.page}&size=${pagination.size}` + filter);

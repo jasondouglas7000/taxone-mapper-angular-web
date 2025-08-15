@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { environment } from './../../environments/environment';
 
-import { HttpClientWrapper } from '../components/httpclientwrapper';
 import { Paginator, Upload, UploadPage } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 import { UploadService } from './shared/upload.service';

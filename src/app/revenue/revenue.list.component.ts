@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { environment } from './../../environments/environment';
 
-import { HttpClientWrapper } from '../components/httpclientwrapper';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
 	selector: 'sourceconfig-list',
@@ -19,7 +19,7 @@ export class SourceConfigListComponent {
 	
 	public sourceType: string = 'Database';
 	
-	constructor(private router: Router, private http: HttpClientWrapper){
+	constructor(private router: Router, private http: HttpClient){
 		this.loadDataSources();
 	}
 	

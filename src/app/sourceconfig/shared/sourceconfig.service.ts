@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClientWrapper } from '../../components/httpclientwrapper';
+import { HttpClient } from '@angular/common/http';
 import { Paginator, SourceConfig, DSTable, DSColumnPage } from '../../components/common/model';
 
 
@@ -11,7 +11,7 @@ import { environment } from './../../../environments/environment';
 export class SourceConfigService{
 	private baseApi = environment.baseApi;
 	
-	constructor(private http: HttpClientWrapper){}
+	constructor(private http: HttpClient){}
 
 	dataSources(){
 		return this.http.get<SourceConfig[]>(this.baseApi + "dataSourceConfigs");

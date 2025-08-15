@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 
 import { environment } from './../../environments/environment';
 
-import { HttpClientWrapper } from '../components/httpclientwrapper';
 import { LoadingService } from '../components/loading.service';
 import { SourceConfigService } from './shared/sourceconfig.service';
 

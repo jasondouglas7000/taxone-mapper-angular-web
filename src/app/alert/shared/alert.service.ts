@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClientWrapper } from '../../components/httpclientwrapper';
+import { HttpClient } from '@angular/common/http';
 import { Email, EmailPage } from '../../components/common/model';
 
 import { environment } from './../../../environments/environment';
@@ -10,7 +10,7 @@ import { environment } from './../../../environments/environment';
 export class AlertService{
 	private baseApi = environment.baseApi;
 	
-	constructor(private http: HttpClientWrapper){}
+	constructor(private http: HttpClient){}
 	
 	loadEmails(){
 		return this.http.get<EmailPage>(this.baseApi + 'emails?page=0&size=1000');

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClientWrapper } from '../../components/httpclientwrapper';
+import { HttpClient } from '@angular/common/http';
 import { Paginator, Schedule, SchedulePage, SAFXTable, SAFXTablePage, SAFXColumn } from '../../components/common/model';
 
 
@@ -12,7 +12,7 @@ import { environment } from './../../../environments/environment';
 export class ScheduleService{
 	private baseApi = environment.baseApi;
 	
-	constructor(private http: HttpClientWrapper){}
+	constructor(private http: HttpClient){}
 
 	schedules(pagination: Paginator){
 		return this.http.get<SchedulePage>(this.baseApi + `schedules?page=${pagination.page}&size=${pagination.size}`);
