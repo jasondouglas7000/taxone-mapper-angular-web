@@ -13,7 +13,6 @@ export class LoginService{
     public token: string | null = null;
 	
 	constructor(private http: HttpClient){}
-	
 
 	login(user: any){
 		return this.http.post(this.baseApi + 'authenticate', user);

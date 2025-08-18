@@ -29,10 +29,7 @@ export class LoginComponent{
 		
 		this.loginService.login(this.user)
 		.subscribe((response: any) => {
-			//alert('response:' + JSON.stringify(response));
-			console.log("response.token:" + response.token);
 			this.loginService.token = response.token;
-			//sessionStorage.setItem("token", );
 			this.router.navigate(['upload']);
 		}, error => {
 			alert("Login inválido");
