@@ -12,21 +12,14 @@ import { LoginService } from './shared/login.service';
     selector: 'login',
     templateUrl: 'login.component.html',
     styleUrls: ['login.component.css'],
-	imports: [CommonModule, FormsModule], 
-	providers: [LoginService]
+	imports: [CommonModule, FormsModule]
 })
 
 export class LoginComponent{
 	private baseApi = environment.baseApi;
 	public user: any = {};
 	
-	constructor(private router: Router, private loginService: LoginService){
-		//sessionStorage.removeItem("token");
-		if (sessionStorage.getItem("token")){
-			//alert("Has token");
-			//this.router.navigate(['upload']);
-		}
-	}
+	constructor(private router: Router, private loginService: LoginService){}
 	
 	onLogin(){
 		if (!this.valid()){
@@ -38,7 +31,8 @@ export class LoginComponent{
 		.subscribe((response: any) => {
 			//alert('response:' + JSON.stringify(response));
 			console.log("response.token:" + response.token);
-			sessionStorage.setItem("token", response.token);
+			this.loginService.token = response.token;
+			//sessionStorage.setItem("token", );
 			this.router.navigate(['upload']);
 		}, error => {
 			alert("Login inválido");

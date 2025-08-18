@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseApi: 'http://localhost:8180/'
+  baseApi: 'http://www.taxone-mapper-api/'
 };

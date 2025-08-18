@@ -1,3 +1,4 @@
+import { inject  } from '@angular/core';
 import { Routes, ResolveFn, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateFn } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
@@ -14,11 +15,15 @@ import { RevenueComponent } from './revenue/revenue.component';
 import { AlertComponent } from './alert/alert.component';
 import { NotFoundComponent } from './notfound/notfound.component';
 
+import { LoginService } from './login/shared/login.service';
+
+
 export const AuthGuardFunction: CanActivateFn = (
   next: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
-    if (sessionStorage.getItem("token") != null){
+    let loginService = inject(LoginService);
+    if (loginService.token != null){
         return true;
     }else{
         return false;
@@ -26,7 +31,7 @@ export const AuthGuardFunction: CanActivateFn = (
 }
 
 export const routes: Routes = [
-	{path : "", component: AlertComponent},
+	{path : "", component: LoginComponent},
 	{path : "upload", component: UploadComponent, canActivate: [AuthGuardFunction]},
 	{path : "sourceconfig-list", component: SourceConfigListComponent, canActivate: [AuthGuardFunction]}, 
 	{path : "sourceconfig/:sourceType/:operation", component: SourceConfigComponent, canActivate: [AuthGuardFunction]}, 
