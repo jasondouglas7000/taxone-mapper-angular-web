@@ -8,6 +8,7 @@ import { Paginator, Email, EmailPage } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 
 import { AlertService } from './shared/alert.service';
+import { ModalService } from '../components/modal/modal.service';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class AlertComponent {
 	
 	public email: Email = new Email();
 	
-	constructor(private router: Router, private alertService: AlertService){
+	constructor(private router: Router, private alertService: AlertService, private modalService: ModalService){
 		this.loadEmails();
 	}
 	
@@ -66,7 +67,7 @@ export class AlertComponent {
 		if (id){
 			this.alertService.onDelete(id)
 			.subscribe(() => {
-				alert("Email excluido com sucesso");
+				this.modalService.showMessage("Email excluido com sucesso");
 				this.loadEmails();
 			});
 		}
@@ -74,7 +75,7 @@ export class AlertComponent {
 	
 	onAdd(){
 		if (!this.valid()){
-			alert("Todos os campos são oberigatório");
+			this.modalService.showMessage("Todos os campos são oberigatório");
 			return;
 		}
 		
@@ -87,9 +88,9 @@ export class AlertComponent {
 	onSave(){
 		this.alertService.onSave(this.emails)
 		.subscribe((response : Email[]) => {
-			alert("Email salvo com sucesso");
+			this.modalService.showMessage("Email salvo com sucesso");
 		}, error => {
-			alert("Erro salvando email");
+			this.modalService.showMessage("Erro salvando email");
 		});
 
 	}

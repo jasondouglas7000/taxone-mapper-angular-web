@@ -7,6 +7,7 @@ import { environment } from './../../environments/environment';
 import { Paginator, SAFXColumn, Schedule, SAFXTablePage, SAFXTable } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 import { ScheduleService } from './shared/schedule.service';
+import { ModalService } from '../components/modal/modal.service';
 
 
 @Component({
@@ -61,7 +62,8 @@ export class ScheduleComponent {
 	
 	
 	
-	constructor(private router: Router, private route: ActivatedRoute, private ref: ChangeDetectorRef, private scheduleService: ScheduleService){
+	constructor(private router: Router, private route: ActivatedRoute, private ref: ChangeDetectorRef, private scheduleService: ScheduleService,
+        private modalService: ModalService){
 		this.pagination.size = 2;
 		let scheduleId = this.route.snapshot.paramMap.get('id')!;
 		let days = this.route.snapshot.paramMap.get('days')!;
@@ -113,7 +115,7 @@ export class ScheduleComponent {
 	
 	generateDaysValue(){
 		let days = '';
-		//alert("this.selectedDays:" + JSON.stringify(this.selectedDays));
+		//this.modalService.showMessage("this.selectedDays:" + JSON.stringify(this.selectedDays));
 		this.selectedDays.forEach((day:any) => {
 			days += day + ',';
 		});
@@ -204,19 +206,19 @@ export class ScheduleComponent {
 			this.availableTables.sort((a:any,b:any) => a.id-b.id);
 			this.selectedSelectedTables = [];
 		}else{
-			alert("Existe tabela que esta sendo usadas em critérios. Remover os critérios corespondentes");
+			this.modalService.showMessage("Existe tabela que esta sendo usadas em critérios. Remover os critérios corespondentes");
 		}
 	}
 	
 	onAdd(){
-		//alert(JSON.stringify(this.criteria));
+		//this.modalService.showMessage(JSON.stringify(this.criteria));
 		if (this.criteria.operator != 'empty' && this.criteria.operator != 'not empty' 
 			&& (!this.criteria.value || this.criteria.value == '')){
-			alert("Preencher o valor do critério");
+			this.modalService.showMessage("Preencher o valor do critério");
 			return;
 		}
 		if (this.criteria.operator == 'between' && (!this.criteria.additionalValue || this.criteria.additionalValue == '')){
-			alert("Preencher o valor final do critério");
+			this.modalService.showMessage("Preencher o valor final do critério");
 			return;
 		}
 		
@@ -263,19 +265,19 @@ export class ScheduleComponent {
 		this.generateDaysValue();
 		this.generateHoursValue();
 		this.scheduleService.save(this.scheduleConfig).subscribe((response:any) => {
-			alert("Agendamento salvo com sucesso");
+			this.modalService.showMessage("Agendamento salvo com sucesso");
 		});
 		
 	}
 	
 	valid(){
 		if (!this.scheduleConfig.name || this.scheduleConfig.name == ''){
-			alert("Nome obrigatório");
+			this.modalService.showMessage("Nome obrigatório");
 			return false;
 		}
 		
 		if (this.scheduleConfig.safxTables!.length == 0){
-			alert("Adicione tabela SAFX");
+			this.modalService.showMessage("Adicione tabela SAFX");
 			return false;
 		}
 		return true;

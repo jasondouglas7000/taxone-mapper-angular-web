@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Paginator, SAFXTable, SAFXColumn, DSTable, DSColumnPage, DSColumn } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 import { MatcherService } from './shared/matcher.service';
+import { ModalService } from '../components/modal/modal.service';
 
 @Component({
     selector: 'matcher',
@@ -39,7 +40,7 @@ export class MatcherComponent {
 	public dsTotalPages : number = 0;
 	public dsPagination : Paginator = new Paginator();
 
-	constructor(private route: ActivatedRoute, private router: Router, private matcherService: MatcherService){
+	constructor(private route: ActivatedRoute, private router: Router, private matcherService: MatcherService, private modalService: ModalService){
 		this.selectedTableId = parseInt(route.snapshot.paramMap.get('tableName')!);
 		this.loadSAFXTable();
 		this.loadSAFXColumns();
@@ -68,7 +69,7 @@ export class MatcherComponent {
 			this.safxTotalPages = pages;
 			this.safxColumns = this.safxColumnsFull.slice(0, this.safxPagination.size);
 		}, error => {
-      alert("Error calling - " + JSON.stringify(error))
+      this.modalService.showMessage("Error calling - " + JSON.stringify(error))
     });
 
 	}
@@ -116,20 +117,20 @@ export class MatcherComponent {
 
 	onSave(){
 		if (!this.valid()){
-			alert("Todos os campos marcados com * são obrigatórios");
+			this.modalService.showMessage("Todos os campos marcados com * são obrigatórios");
 			return;
 		}
 		this.matcherService.saveDSTAble(this.selectedTableId, this.selectedDsTableId)
 		.subscribe( () => {
 		},error => {
-			alert("Erro salvando SAFX");
+			this.modalService.showMessage("Erro salvando SAFX");
 		});
 		
 		this.matcherService.saveSAFXTAble(this.selectedTableId, this.safxColumnsFull)
 		.subscribe( () => {
-			alert("Mapeamento salvo com sucesso!");
+			this.modalService.showMessage("Mapeamento salvo com sucesso!");
 		},error => {
-			alert("Erro salvando SAFX");
+			this.modalService.showMessage("Erro salvando SAFX");
 		});
 	}
 

@@ -6,6 +6,7 @@ import { environment } from './../../environments/environment';
 import { Paginator, Upload, UploadPage } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 import { UploadService } from './shared/upload.service';
+import { ModalService } from '../components/modal/modal.service';
 
 @Component({
     selector: "upload",
@@ -22,21 +23,21 @@ export class UploadComponent {
 	
 	public uploads: Upload[] = [];
 	
-	constructor(private uploadService: UploadService){
+	constructor(private uploadService: UploadService, private modalService: ModalService){
 		this.loadUploads();
 	}
 	
 	loadUploads(){
 		this.uploadService.uploads(this.pagination)
 		.subscribe( (response : UploadPage) => {
-			//alert("ok:" + response);
+			//this.modalService.showMessage("ok:" + response);
 			this.uploads = response.content;
 			this.totalPages = response.totalPages;
 		});
 	}
 	
 	showUps(){
-		alert(JSON.stringify(this.uploads));
+		this.modalService.showMessage(JSON.stringify(this.uploads));
 	}
 
 	onOpenUpload(){
@@ -53,7 +54,7 @@ export class UploadComponent {
 
 	onUpload(){
 		if (!this.valid()){
-			alert("Todos os campos são obrigatorios");
+			this.modalService.showMessage("Todos os campos são obrigatorios");
 			return;
 		}
 		const formData = new FormData();
@@ -61,12 +62,12 @@ export class UploadComponent {
 		formData.append('layoutVersion', this.layoutVersion);
 		this.uploadService.upload(formData)
 		.subscribe(response => {
-			alert("Upload realizado com sucesso");
+			this.modalService.showMessage("Upload realizado com sucesso");
 			this.file = null;
 			this.layoutVersion = '';
 			this.loadUploads();
 		}, error => {
-			alert("Error realizando o upload");
+			this.modalService.showMessage("Error realizando o upload");
 		});
 	}
 	
@@ -79,7 +80,7 @@ export class UploadComponent {
 	}
 	
 	onPage(page: number){
-		//alert("onPage:" + page);
+		//this.modalService.showMessage("onPage:" + page);
 		if (page >= 0 && page < this.totalPages){
 			this.pagination.page=page;
 			this.loadUploads();

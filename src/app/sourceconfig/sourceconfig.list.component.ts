@@ -9,6 +9,7 @@ import { LoadingService } from '../components/loading.service';
 import { SourceConfigService } from './shared/sourceconfig.service';
 
 import { SourceConfig } from '../components/common/model';
+import { ModalService } from '../components/modal/modal.service';
 
 
 
@@ -29,7 +30,8 @@ export class SourceConfigListComponent {
 	
 	public sourceType: string = 'Database';
 	
-	constructor(private router: Router, private loadingService: LoadingService, private sourceConfigService: SourceConfigService){
+	constructor(private router: Router, private loadingService: LoadingService, private sourceConfigService: SourceConfigService,
+        private modalService: ModalService){
 		this.loadDataSources();
 	}
 	
@@ -38,7 +40,7 @@ export class SourceConfigListComponent {
 		subscribe( (response : SourceConfig[]) => {
 			this.dataSourceConfigs = response;
 		}, error => {
-			alert("Error listing the datasources");
+			this.modalService.showMessage("Error listing the datasources");
 		});
 	}
 	

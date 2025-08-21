@@ -7,6 +7,7 @@ import { environment } from './../../environments/environment';
 import { Paginator, SourceConfig, DSColumn, DSColumnPage, DSTable } from '../components/common/model';
 import { PaginationComponent } from '../components/pagination.component';
 import { SourceConfigService } from './shared/sourceconfig.service';
+import { ModalService } from '../components/modal/modal.service';
 
 
 @Component({
@@ -29,7 +30,8 @@ export class SourceConfigComponent {
 	public dsTables: DSTable[] = [];
 	public dsColumns: DSColumn[] = [];
 	
-	constructor(private route: ActivatedRoute, private router: Router, private sourceConfigService: SourceConfigService){
+	constructor(private route: ActivatedRoute, private router: Router, private sourceConfigService: SourceConfigService,
+        private modalService: ModalService){
 		this.dataSourceType = this.route.snapshot.paramMap.get('sourceType')!;
 		let operation = this.route.snapshot.paramMap.get('operation')!;
 		if (operation == 'A') {
@@ -70,6 +72,7 @@ export class SourceConfigComponent {
 	
 	valid(){
 		let valid = false;
+        /*
 		if (!this.dataSourceConfig.url || this.dataSourceConfig.url == ''){
 			return false;
 		}
@@ -85,6 +88,7 @@ export class SourceConfigComponent {
 				return false;
 			}
 		}
+        */
 		return true;
 	}
 
@@ -97,30 +101,30 @@ export class SourceConfigComponent {
 	
 	onGetMetadata(){
 		if (!this.valid()){
-			alert("Todos os campos são obrigatórios");
+			this.modalService.showMessage("Todos os campos são obrigatórios");
 			return;
 		}
 		this.sourceConfigService.metadata(this.dataSourceType, this.dataSourceConfig)
 		.subscribe( () => {
 			this.loadDSTables();
-			alert("Metadata obtido com sucesso");
+			this.modalService.showMessage("Metadata obtido com sucesso");
 		}, error => {
-			alert("Erro obtendo o metadata");
+			this.modalService.showMessage("Erro obtendo o metadata");
 		});
 	}
 	
 	onSave(){
 		if (!this.valid()){
-			alert("Todos os campos são obrigatórios");
+			this.modalService.showMessage("Todos os campos são obrigatórios");
 			return;
 		}
 		
 		this.sourceConfigService.save(this.dataSourceType, this.dataSourceConfig)
 		.subscribe( () => {
-			alert("Datasource salvo com sucesso!");
+			this.modalService.showMessage("Datasource salvo com sucesso!");
 			this.loadDSTables();
 		}, error => {
-			alert("Erro salvando Datasource");
+			this.modalService.showMessage("Erro salvando Datasource");
 		});
 	}
 	

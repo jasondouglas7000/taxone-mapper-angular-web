@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { environment } from './../../environments/environment';
 
 import { LoginService } from './shared/login.service';
+import { ModalService } from '../components/modal/modal.service';
 
 
 @Component({
@@ -19,11 +20,11 @@ export class LoginComponent{
 	private baseApi = environment.baseApi;
 	public user: any = {};
 	
-	constructor(private router: Router, private loginService: LoginService){}
+	constructor(private router: Router, private loginService: LoginService, private modalService: ModalService){}
 	
 	onLogin(){
 		if (!this.valid()){
-			alert("Todos os campos são obrigatórios");
+			this.modalService.showMessage("Todos os campos são obrigatórios");
 			return;
 		}
 		
@@ -32,7 +33,7 @@ export class LoginComponent{
 			this.loginService.token = response.token;
 			this.router.navigate(['upload']);
 		}, error => {
-			alert("Login inválido");
+			this.modalService.showMessage("Login inválido");
 		});
 	}
 	

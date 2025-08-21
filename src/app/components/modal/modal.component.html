@@ -1,0 +1,17 @@
+<div class="modal-div" *ngIf="hide == false" (click)="ok()">
+    <div class="local-card main-content" (click)="nullable($event)">
+        <div>
+            <div class="tltle message-title">Sucesso</div>
+            <div class="bordered modal-content" >
+                <div class="modal-inner-content">
+                    <div class="width-100">
+                        <div class="message">{{message}}</div>
+                        <div class="ok-button">
+                            <button class="width-100" (click)="ok()">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            
