@@ -72,7 +72,6 @@ export class SourceConfigComponent {
 	
 	valid(){
 		let valid = false;
-        /*
 		if (!this.dataSourceConfig.url || this.dataSourceConfig.url == ''){
 			return false;
 		}
@@ -88,7 +87,6 @@ export class SourceConfigComponent {
 				return false;
 			}
 		}
-        */
 		return true;
 	}
 

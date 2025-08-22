@@ -9,7 +9,7 @@ import { Paginator, Schedule, SchedulePage } from '../components/common/model';
 import { LoadingService } from '../components/loading.service';
 import { PaginationComponent } from '../components/pagination.component';
 import { ScheduleService } from './shared/schedule.service';
-
+import { ModalService } from '../components/modal/modal.service';
 
 
 @Component({
@@ -25,7 +25,8 @@ export class ScheduleListComponent {
 	public pagination : Paginator = new Paginator();
 	
 
-	constructor(private router: Router, private loadingService: LoadingService, private scheduleService: ScheduleService){
+	constructor(private router: Router, private loadingService: LoadingService, private scheduleService: ScheduleService,
+        private modalService: ModalService){
 		this.loadSchedules();
 	}
 	
@@ -51,13 +52,12 @@ export class ScheduleListComponent {
 
 	onDelete(id: number){
 		this.scheduleService.delete(id).subscribe(() => {
-			alert("Deletado com sucesso");
+			this.modalService.showMessage("Deletado com sucesso");
 			this.loadSchedules();
 		});
 	}
 	
 	onPage(page: number){
-		alert("onPagex:" + page);
 		if (page >= 0 && page < this.totalPages){
 			this.pagination.page=page;
 			this.loadSchedules();
