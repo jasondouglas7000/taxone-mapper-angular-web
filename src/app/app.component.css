@@ -3,8 +3,9 @@ agm-map {
 }
 
 .main-logo {
-    margin-left: -5px; 
-    width: 126px;
+    width: 194px;
+    margin-top: -40px;
+    margin-left: -18px;
 }    
 
 .menu-item {
@@ -37,4 +38,19 @@ agm-map {
 
 .div-iten-name{
     color: white;
+}
+
+
+.recorte {
+  width: 200px;       /* área visível */
+  height: 130px;      /* área visível */
+  background-image: url('/assets/img/logo_branco.png');
+  background-size: 910px 607px; /* tamanho original da imagem */
+  background-position: -250px -230px; /* move o recorte */
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.recortada {
+  clip-path: inset(20% 10% 20% 10%);
 }

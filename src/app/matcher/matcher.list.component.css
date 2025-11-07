@@ -1,11 +1,11 @@
 .filter {
-    width:60%; 
     margin-left: 7px;
 }
 
 .filter-name {
     display: flex; 
-    margin: 5px 0 0 10px
+    margin: 4px 0 0 10px;
+    width: 27%;
 }
 
 .filter-name > div{
@@ -16,6 +16,7 @@
 .filter-associado {
     display: flex; 
     margin: 5px 0 0 63px;
+    width: 58%;
 }
 
 .filter-associado > div{
@@ -30,13 +31,14 @@
 
 .div-line-divider {
     margin-top:22px; 
-    width:60%
+    width:97%
 }
 
 .inner-content {
     margin: 5px 0 10px 0; 
-    width:58%
+    width:98%
 }
+
 
 .edit-button {
     padding: 1px 6px 1px 6px;

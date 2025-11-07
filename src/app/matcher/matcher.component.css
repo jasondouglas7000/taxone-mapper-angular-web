@@ -6,6 +6,7 @@
     font-size: 13px; 
     padding: 17px 8px 13px 0px; 
     font-weight: 600;
+    color: #b33a00;
 }
 
 .dscolumn-target{
@@ -25,7 +26,7 @@
 
 .dstable-main-content {
     width: 45%; 
-    margin-left: 100px;
+    margin-left: 85px;
 }
 
 .dstable-header {
@@ -37,6 +38,7 @@
 
 .dstable-header-title {
     margin-right: 7px;
+    color: #b33a00;
 }
 
 .dstable-select {
@@ -47,5 +49,5 @@
 
 .div-buttons {
     direction: rtl; 
-    margin: 42px 13px 0 0;
+    margin: 22px 30px 12px 0;
 }

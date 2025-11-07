@@ -2,14 +2,14 @@
 	<div>
 		<div class="tltle">Upload</div>
 		<div class="bordered">
-			<div style="margin: 25px 0 0 13px; display: flex; width: 52%">
-				<div (click)="onOpenUpload()" style=" display: flex; border: 1px solid rgb(184 205 241); width: 81%">
+			<div style="margin: 25px 0 0 13px; display: flex; width: 97%">
+				<div (click)="onOpenUpload()" style=" display: flex; border: 1px solid #f2b7a0; width: 81%">
 					<input id="fileInput" type="file" (change)="onSelectFiles($event)" 
 						style="position: absolute; top: -10px; left:-10px; width:0px; height: 0px; opacity: 0">
-					<div style="width:84%">
+					<div style="width:92%">
 						<div style="margin: 2px 5px 0 23px; font-size: 14px;">{{file != null ? file.name : ''}}</div>
 					</div>
-					<div style="width:16%">
+					<div style="width:8%">
 						<button>Upload</button>
 					</div>
 				</div>
@@ -17,13 +17,13 @@
 					<div style="font-size: 12px; margin: 3px 13px 0 0;">Versão</div>
 					<input [(ngModel)]="layoutVersion" type="text" maxlength="10" size="7" style="height: 13px;">
 				</div>
-				<div style="width:10%; margin: 1px 0px 0px 7%;">
+				<div style="width:7%; margin: 1px 0px 0px 7%;">
 					<button (click)="onUpload()">Send</button>
 				</div>
 			</div>
 			<div style="margin:17px 0 0 13px;">
 				<div class="table-title">Uploads</div>
-				<div style="margin: 5px 0 10px 0; width:60%">
+				<div style="margin: 5px 0 10px 0; width:97%">
 					<table cellspacing="0" style="width: 100%">
 						<thead>
 							<td class="table-header">Nome do Arquivo</td>

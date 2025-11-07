@@ -3,7 +3,7 @@
 		<div class="tltle">Mapeamentos</div>
 		<div class="bordered">
 			<!-- Filtro  -->
-			<div class="filter">
+			<div class="filter" style="margin-top: 20px;">
 				<div class="filter-label">Filtro</div>
 				<div style="display:flex">	
 					<div class="filter-name">
@@ -14,8 +14,6 @@
 						<div>Associada</div>
 						<input [(ngModel)]="justAssociated" type="checkbox">
 					</div>
-				</div>
-				<div class="div-botao-filter">
 					<button (click)="onFilter()">
 						Filtrar
 					</button>
@@ -24,8 +22,8 @@
 			<div class="div-line-divider">
 				<div class="line-divider"></div>
 			</div>
-			<div class="list-content">
-				<div class="table-title">Tabelas TaxONE</div>
+			<div class="list-content" style="margin-right: 13px;">
+				<div class="table-title" style="padding:0px;">Tabelas TaxONE</div>
 				<div class="inner-content">
 					<table cellspacing="0" class="width-100">
 						<thead>

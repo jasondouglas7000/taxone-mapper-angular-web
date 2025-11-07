@@ -8,9 +8,9 @@
 				<div class="inner-content">
 					<table cellspacing="0" class="width-100">
 						<thead>
-							<td class="table-header width-60">Email</td>
+							<td class="table-header width-75">Email</td>
 							<td class="table-header width-20">Tipo Notificação</td>
-							<td class="table-header width-10"></td>
+							<td class="table-header width-5"></td>
 						</thead>
 						<tbody>
 							<tr class="t-row">
@@ -29,7 +29,7 @@
 							<tr *ngFor="let e of emails" class="t-row">
 								<td class="t-columns">{{e.email}}</td>
 								<td class="t-columns">{{e.type}}</td>
-								<td class="t-columns" class="td-button">
+								<td class="t-columns td-button">
 									<button (click)="onDelete(e.id)" [disabled]="e.id == null" 
 										class="alert-button">Delete</button>
 								</td>

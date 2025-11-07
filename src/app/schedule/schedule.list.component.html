@@ -3,7 +3,7 @@
 		<div class="tltle">Agendamentos</div>
 		<div class="bordered">
 			<div class="main-content">
-				<div class="width-45">
+				<div style="width:97%">
 					<div style="display:flex">
 						<div class="table-title agendamento-title">Agendamentos</div>
 						<button (click)="onAdd()" class="add-button">Adicionar</button>
@@ -14,8 +14,8 @@
 								<td class="table-header table-header-nome">Nome</td>
 								<td class="table-header">Usuário</td>
 								<td class="table-header">Status</td>
-								<td class="table-header width-10"></td>
-								<td class="table-header width-10"></td>
+								<td class="table-header width-5"></td>
+								<td class="table-header width-5"></td>
 							</thead>
 							<tbody>
 								@for (s of schedules; track s.id) {
@@ -33,7 +33,6 @@
 									<td class="t-columns" style="width: 10px;">
 										<button (click)="onDelete(s.id)" class="schedule-button">Excluir</button>
 									</td>
-									<td class="t-columns"></td>
 								</tr>
 								}
 							</tbody>

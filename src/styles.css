@@ -6,12 +6,12 @@
 html,
 /*font-family: Roboto, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";*/
 body {
-	height: 100%;
-	margin: 0px;
-	font-family: "Futura STD", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-	background-color: rgb(244, 247, 251);
-	color:rgb(0, 40, 104);
-}
+  background-color: #fff8f5;
+  color: #471a08;
+  font-family: "Futura STD", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+} 
+
 a {
 	color: white;
 	text-decoration: none;
@@ -20,39 +20,45 @@ a:hover {
 	text-decoration: none;
 }
 
-input[type='text'], input[type='file'], input[type='number'], input[type='password'], input[type='date'], select, textarea{
-	font-family: "Futura STD";
-	font-size: 12px;
-	color:rgb(0, 40, 104);
-	height: 10px; 
-	padding: 6px;
-	border-radius: 4px; 
-	border: 1px solid rgb(184 205 241);
+input[type='text'], input[type='file'], input[type='number'], input[type='password'], input[type='date'], select, textarea {
+  font-family: inherit;
+  font-size: 12px;
+  color: #471a08;
+  background-color: #fff2ed;
+  border: 1px solid #f2b7a0;
+  border-radius: 4px;
+  padding: 6px;
+  transition: box-shadow 0.3s;
 }
-input[type='text']:focus, select:focus, textarea:focus{
-	outline: none;
-	will-change: box-shadow;
-	transition: box-shadow .3s;
-	box-shadow: rgb(100 100 111 / 20%) 0px 1px 6px 5px;
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 51, 0.3);
 }
+
 select {
 	height: 24px !important; 
 	padding: 0 0 0 3px;
 }
 option{
-	color:rgb(0, 40, 104);
+	color: #471a08;
 	padding: 1px;
 }
-button{
-	font-size: 11px;
-	background-color: rgb(0, 40, 104); 
-	color: white; 
-	border-radius: 4px; 
-	padding: 5px 8px 5px 8px;;
-	transition: .5s;
+
+button {
+  font-size: 12px;
+  background-color: #d94a0b;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  padding: 7px 11px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
 }
+
 button:hover {
-	background-color: rgb(9 84 204); 
+  background-color: #ff6020;
+  transform: translateY(-1px);
 }
 
 /*not standart*/
@@ -60,14 +66,15 @@ button:hover {
     width: 12px !important;
 }
 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
-}
-
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  background: #d94a0b;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6020;
+}
+::-webkit-scrollbar-track {
+  background: #ffe5d7;
 }
 
 select.style::-webkit-scrollbar {
@@ -84,28 +91,37 @@ select.style::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
-.local-card{
-	padding: 12px 14px 14px 14px; 
-	background-color: white;
-	border-radius: 7px;
-	box-shadow: rgb(100 100 111 / 20%) 0px 0px 7px 2px;
-}
-.div-link {
-	display: flex;
-	font-size:12px; 
-	padding: 9px 0 9px 14px; 
-	text-align: left;
-	transition: .5s;
-}
-.div-link:hover {
-	background-color: #001d4d;;
+.local-card {
+  background-color: #fffaf8;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(179, 58, 0, 0.15);
+  padding: 14px;
 }
 
-.main-layout{
-	width: 12%; 
-	background-color: rgb(0, 40, 104); 
-	height: 622px; 
-	text-align: center;
+
+.div-link {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #fff2ec;
+  padding: 9px 0 9px 14px;
+  text-align: left;
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 4px 8px;
+}
+
+.div-link:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(3px);
+}
+
+
+.main-layout {
+  width: 12%;
+  background: linear-gradient(180deg, #8b2500 0%, #b33a00 100%);
+  text-align: center;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
 }
 
 .head{
@@ -113,7 +129,8 @@ select.style::-webkit-scrollbar-thumb {
 	margin-left:2px; 
 	width:96%;
 	font-size: 15px;
-	font-weight: 700;
+    color: #b33a00;
+    font-weight: 600;
 	/*padding-bottom: 17px;*/
 	padding-left: 18px;
 }
@@ -126,66 +143,72 @@ select.style::-webkit-scrollbar-thumb {
 }
 
 .tltle{
-	font-size: 15px; font-weight: 600;
+	font-size: 15px; 
+    color: #b33a00;
+    font-weight: 600;
 }
 
 .bordered {
 	border-radius: 8px; 
-	border: 1px solid rgb(184 205 241); 
+	border: 1px solid #f2b7a0;
 	min-height: 453px;
 	margin-top: 16px;
 }
-.line-divider{
-	border-top: 1px solid rgb(184 205 241); 
-	width: 98%; 
-	margin-left:1%;
+
+.line-divider {
+  border-top: 1px solid #f2b7a0;
 }
 
 .filter-label {
 	margin: 25px 0 8px 8px; 
 	font-size: 14px; 
 	font-weight:600;
+    color: #b33a00;    
 }
 .page-itens-counter {
 	font-size: 80%; 
 	background-color: rgb(184 205 241); 
 	border-radius: 5px;
 }
-.table-header{
-	font-size: 15px;
-	background-color: rgb(221 230 247); 
-	color:rgb(56 84 130);
-	padding: 5px;
-}
-.t-columns{
-	font-size: 12px;
-	padding: 4px 2px 4px 3px;
-	border-bottom: 1px solid rgb(184 205 241);
-	/*border-left: 1px solid rgb(184 205 241);*/
-}
-.t-row:hover{
-	background-color: rgb(248 250 255);
-}
-.page-button{
-	font-size: 10px;
-	background-color: white;
-	color: #5C6BC0; 
-	border-radius: 0px;
-	padding: 5px;
-	width: 30px;
-	border-color: rgb(184 205 241);
-	transition: .5s;
-	border-width: 0px;
+
+.table-header {
+  background-color: #ffd8c2;
+  color: #6e2200;
+  font-size: 14px;
+  padding: 6px;
+  border-bottom: 2px solid #f4a47b;
 }
 
-.page-button:hover{
-	background-color: rgb(201 219 251);
+.t-columns {
+  font-size: 12px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #f6c8ad;
+}
+
+.t-row:hover {
+  background-color: #fff0e7;
+}
+
+.page-button {
+  font-size: 11px;
+  background-color: #fff;
+  color: #b33a00;
+  border: 1px solid #f2b7a0;
+  border-radius: 4px;
+  padding: 5px 8px;
+  margin: 0 2px;
+  transition: 0.3s;
+}
+
+.page-button:hover {
+  background-color: #ffe5d7;
 }
 
 .table-title{
 	font-size: 14px; 
 	padding: 15px 7px 12px 0px; 
-	font-weight: 600
+    color: #b33a00;
+    font-weight: 600;
 }
 
 .invisible{
@@ -199,12 +222,8 @@ select.style::-webkit-scrollbar-thumb {
 }
 
 .active-link {
-	display: flex;
-	font-size:12px; 
-	background-color: yellow;
-	padding: 9px 0 9px 14px; 
-	text-align: left;
-	transition: .5s;
+  background-color: #ff7a33 !important;
+  color: #fff;
 }
 
 .list-content{
@@ -245,6 +264,10 @@ select.style::-webkit-scrollbar-thumb {
 
 .width-65 {
     width: 65%
+}
+
+.width-75 {
+    width: 75%
 }
 
 .width-90{

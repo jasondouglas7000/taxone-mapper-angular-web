@@ -5,8 +5,10 @@
 		<div class="bordered">
 			<div class="main-list-content">
 				<div style="display:flex">
-					<div class="table-title sourceconfig-title" >Datasources Configurados</div>
-					<button (click)="onAdd(sourceType)" [disabled]="sourceTypes.length == 0" class="add-button">Adicionar</button>
+                    <div style="display:flex; width:84%">
+                        <div class="table-title sourceconfig-title" >Datasources Configurados</div>
+                    </div>
+                    <button (click)="onAdd(sourceType)" [disabled]="sourceTypes.length == 0" class="add-button">Adicionar</button>
 					<select [(ngModel)]="sourceType" class="datasource-type">
 						<option *ngFor="let st of sourceTypes" value="{{st}}">{{st}}</option>
 					</select>
